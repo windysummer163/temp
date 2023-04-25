@@ -1,6 +1,12 @@
 import streamlit as st
 import datetime
+import pytz
 
+# Set the timezone to Europe/Berlin
+berlin_tz = pytz.timezone('Europe/Berlin')
+
+# Get the current time in Berlin timezone
+current_time_berlin = datetime.datetime.now(berlin_tz)
 
 st.markdown(
     """
@@ -10,8 +16,8 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-start_time = datetime.datetime(2023, 4, 26, 17, 20, 0)
-current_time = datetime.datetime.now()
+start_time = berlin_tz.localize(datetime.datetime(2023, 4, 26, 17, 20, 0))
+current_time = datetime.datetime.now(berlin_tz)
 
 time_elapsed = current_time - start_time
 total_seconds = int(time_elapsed.total_seconds())
@@ -27,7 +33,7 @@ st.write(f"<p style='text-align: center; font-size: 20px; '> TIME SINCE TEST</p>
 
 st.write(f"<p style='text-align: center; font-size: 25px; font-weight: bold;'> {time_str}</p>", unsafe_allow_html=True)
 
-st.write(f"<p style='text-align: center; font-size: 25px; font-weight: bold;'> {start_time} CET </p>", unsafe_allow_html=True)
+st.write(f"<p style='text-align: center; font-size: 25px; font-weight: bold;'> {start_time} </p>", unsafe_allow_html=True)
 
 st.write("---")
 
