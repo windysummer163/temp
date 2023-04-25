@@ -10,7 +10,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-start_time = datetime.datetime(2023, 4, 26, 17, 20, 0)
+start_time = datetime.datetime(2023, 4, 26, 17, 23, 0)
 current_time = datetime.datetime.now()
 
 time_elapsed = current_time - start_time
@@ -33,7 +33,7 @@ st.write("---")
 
 st.write(f"<p style='text-align: center; font-size: 20px; '> NAME </p>", unsafe_allow_html=True)
 
-st.write(f"<p style='text-align: center; font-size: 25px; font-weight: bold;'> Xiaoyu Zhang </p>", unsafe_allow_html=True)
+st.write(f"<p style='text-align: center; font-size: 25px; font-weight: bold;'> Siming Zhao </p>", unsafe_allow_html=True)
 
 st.write("---")
 
